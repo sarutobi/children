@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+	<div id='startForm'>
+		<h1>Сегодня я хочу:</h1>
+		<div id='mood'>
+			<div class='elem' id='killer'><div class='sprite'><img src='{{ STATIC_URL }}img/kill.png'></div>Соревнований</div><div class='elem' id='social'><div class='sprite'><img src='{{ STATIC_URL }}img/social.png'></div>Общения</div><div class='elem' id='research'><div class='sprite'><img src='{{ STATIC_URL }}img/research.png'></div>Открытий</div><div class='elem' id='achive'><div class='sprite'><img src='{{ STATIC_URL }}img/achievment.png'></div>Приключений</div> 
+		</div>
+		<div id='regForm'>
+			<div id='logFormWrapper'>
+				{% block regForm %}
+					<form>
+						<input id='name' type='password' placeholder='Введите имя'>
+						<input id='myMood' type='hidden'>
+						<input id='mail' placeholder='Введите e-mail'>
+						<input id='pass' type='password' placeholder='Введите пароль'>
+						<input type='submit' value='Готово'>
+					</form>
+				{% endblock %}
+			</div>
+			<div id='regButtonGroup'>
+				<button id='logButton' event='login'>Вход</button><button id='regButton' event='registration'>Регистрация</button>
+			</div>
+		</div>
+	</div>
+{% endblock %}
