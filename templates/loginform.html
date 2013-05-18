@@ -10,10 +10,10 @@
 			<div id='logFormWrapper'>
 				{% block regForm %}
 					<form>
-						<input id='name' type='password' placeholder='Введите имя'>
+						<input id='name' type='text' placeholder='Введите имя'>
 						<input id='myMood' type='hidden'>
-						<input id='mail' placeholder='Введите e-mail'>
-						<input id='pass' type='password' placeholder='Введите пароль'>
+						<input id='mail' name='username' placeholder='Введите e-mail'>
+						<input id='pass' name='password' type='password' placeholder='Введите пароль'>
 						<input type='submit' value='Готово'>
 					</form>
 				{% endblock %}
@@ -23,4 +23,33 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(document).on('ready', function () {
+			doc_w = $(document).width();
+			if (doc_w < 500) $('#mood').addClass('slideshow');
+    		$('.slideshow').cycle({
+				fx: 'scrollRight', 
+				next:   '.slideshow',
+				timeout:  0, 
+    			easing:  'easeInOutBack'
+			});
+			$('#logFormWrapper').hide();
+			$('.sprite img').on('click', function () {
+				$('.sprite .active').removeClass('active');
+				$(this).addClass('active');
+				$('#myMood').val($('#mood img').index($(this)));
+			})
+			$('#logButton, #regButton').on('click', function () {
+				var eventBut = $(this).attr('event');
+				$('#regButtonGroup').slideUp(400, function () {
+					$('#logFormWrapper').slideDown(400);	
+					if (eventBut === 'login') $('#name').hide();				
+				    $('#logFormWrapper form').attr('action', '/' + eventBut);
+                });
+			});
+			$('#logFormWrapper button').on('click', function () {
+			    	
+			});
+		});
+	</script>
 {% endblock %}
