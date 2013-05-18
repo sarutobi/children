@@ -9,7 +9,7 @@ class AdminGroupOfInterest(admin.ModelAdmin):
 
 
 class AdminInterest(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'root')
 
 admin.site.register(GroupOfInterest, AdminGroupOfInterest)
 admin.site.register(Interest, AdminInterest)
