@@ -143,10 +143,10 @@ INSTALLED_APPS = (
     'core',
 )
 
-AUTHENTICATION_BACKENDS = {
+AUTHENTICATION_BACKENDS = (
     'core.backends.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
-}
+)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
