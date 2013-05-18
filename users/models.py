@@ -8,7 +8,7 @@ class UserType(models.Model):
     class Meta:
         order = ('order')
 
-    name = models.CharField(verbose_name=_('Наименование'))
+    name = models.CharField(imax_length=20, verbose_name=_('Наименование'))
     description = models.Text(
         verbose_name=_('Описание'),
         blank=True,
@@ -18,4 +18,11 @@ class UserType(models.Model):
 
 
 class UserProfile(models.Model):
-    date_of_birth = models.DateField(verbose_name=_('Дата рождения'))
+    age = models.IntegerField(_('Возраст'))
+
+
+class Scool(models.Model):
+    name = models.CharField(max_length=40, verbose_name=_('Школа'))
+    lat = models.FloatField(verbose_name=_('Широта'))
+    lon = models.FloatField(verbose_name=_('Долгота'))
+
