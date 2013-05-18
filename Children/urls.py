@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # url(r'^Children/', include('Children.foo.urls')),
 
     url(r'^$', 'core.views.index'),
+    url(r'^registration$', 'users.views.registration'),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )

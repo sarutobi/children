@@ -9,9 +9,10 @@
 		<div id='regForm'>
 			<div id='logFormWrapper'>
 				{% block regForm %}
-					<form>
-						<input id='name' type='text' placeholder='Введите имя'>
-						<input id='myMood' type='hidden'>
+					<form method='POST'>
+						{% csrf_token %}
+                        <input id='name' name='name' type='text' placeholder='Введите имя'>
+						<input id='myMood' name='mood' type='hidden'>
 						<input id='mail' name='username' placeholder='Введите e-mail'>
 						<input id='pass' name='password' type='password' placeholder='Введите пароль'>
 						<input type='submit' value='Готово'>
