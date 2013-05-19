@@ -11,6 +11,8 @@ urlpatterns = patterns('',
 
     url(r'^$', 'core.views.index'),
     url(r'^registration$', 'users.views.registration'),
+    url(r'^anketa$', 'users.views.anketa'),
+    url(r'^interests', 'core.views.interests'),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )

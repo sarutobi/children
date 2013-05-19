@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div id='filter'>
+<a href='/interest/'>Все</a>&nbsp;
+{% for g in groups %}
+<a href='/interest/type/{{ g.id }}'>{{ g.name }}</a>&nbsp;
+{% endfor %}
+
+</div>
+<div id='content'>
+{% for i in interests %}
+
+{{ i.name }}
+{% endfor %}
+</div>
+
+{% endblock %}
