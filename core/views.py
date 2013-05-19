@@ -28,7 +28,7 @@ def interests(request, type=None):
 def organization_list(request):
     return render_to_response(
         'organizations.html',
-        { 'sections': Workshop.objects.all(), },
+        {'sections': Workshop.objects.all(), },
         context_instance=RequestContext(request)
     )
 
