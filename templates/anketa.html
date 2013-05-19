@@ -17,6 +17,7 @@
 			$('#panel div').fadeOut(0);
 			$('#nav .sprite img').on('click', function () {
 				var me = this;
+				me.css({opacity: 1});
 				if ($('#nav .sprite img.active').length) {
 					var elem = $('#nav .sprite img.active').fadeOut(1000);
 					elem.removeClass('active');
@@ -29,17 +30,17 @@
 					var elem = $('#nav .sprite img:not(.active)').fadeOut(1000);
 					setTimeout(function () {
 						elem.stop();
-						console.log(elem);
 					}, 500);
 				}
-				// $('#panel').show().find('div').fadeOut(500, function () {
-				// 	$('#'+$(me).id+'Panel').fadeIn(500);
-				// });
-				// $('#panel img').on('click', function () {
-				// 	if ($(this).hasClass('active')) {
-				// 		$(this).removeClass('active');
-				// 	} else $(this).addClass('active');
-				// });
+				$('#panel').find('div').fadeOut(500, function () {
+					$('#panel').show();
+					$('#'+$(this).parent().parent().attr('id')+'Panel').fadeIn(500);
+				});
+				$('#panel img').on('click', function () {
+					if ($(this).hasClass('active')) {
+						$(this).removeClass('active');
+					} else $(this).addClass('active');
+				});
 			});
 		});
 	</script>
