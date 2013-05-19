@@ -25,6 +25,7 @@
 						$(me).addClass('active');
 					}, 500);
 				} else {
+					$('#nav .sprite img.active').removeClass('active');
 					$(this).addClass('active'); 
 					$('#nav .sprite img:not(.active)').fadeOut(1000);
 					setTimeout(function () {
