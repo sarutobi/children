@@ -13,12 +13,18 @@ class UserType(models.Model):
         verbose_name=_('Описание'),
         blank=True,
         null=True)
-    icon = models.ImageField()
+#    icon = models.ImageField()
     order = models.IntegerField(verbose_name=_('Порядок сортировки'))
+
+SEX = (
+    (1, _('Мальчик')),
+    (2, _('Девочка')),
+)
 
 
 class UserProfile(models.Model):
     age = models.IntegerField(_('Возраст'))
+    sex = models.IntegerField(choice=SEX, verbose_name=_('Пол'))
 
 
 class Scool(models.Model):
