@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block content %}
+	<script type="text/javascript">
+		$(document).on('ready', function () {
+			doc_w = $(document).width();
+			if (doc_w < 500)  {
+				$('#mood').addClass('slideshow');
+	    		$('.slideshow').cycle({
+					fx: 'scrollRight', 
+					next:   '.slideshow',
+					timeout:  0, 
+	    			easing:  'easeInOutBack'
+				}); 
+    		}
+			$('.notactive').hide();
+			$('.sprite img').on('click', function () {
+				$('.sprite .active').removeClass('active');
+				$(this).addClass('active');
+				$('.sprite :not(.active) .notactive').fadeIn(200);
+				$('.sprite .active .notactive').hide();
+				//$('#myMood').val($('#mood img').index($(this)));
+			});
+			$('#logButton, #regButton').on('click', function () {
+				var eventBut = $(this).attr('event');
+				$('#regButtonGroup').slideUp(400, function () {
+					$('#logFormWrapper').slideDown(400);	
+					if (eventBut === 'login') $('#name').hide();				
+				    $('#logFormWrapper form').attr('action', '/' + eventBut);
+                });
+			});
+			$('#logFormWrapper button').on('click', function () {
+			    	
+			});
+		});
+	</script>
+	<div id='anketaPage' class='container'>
+		<div id='nav'>
+			<div id='art' class='tab'></div><div class='sprite'><div class='notactive'><img src='{{ STATIC_URL }}img/art.png'></div></div><div id='science' class='tab'></div><div class='sprite'><div class='notactive'><img src='{{ STATIC_URL }}img/science.png'></div></div><div id='sport' class='tab'></div><div class='sprite'><div class='notactive'><img src='{{ STATIC_URL }}img/sport.png'></div></div>
+		</div>
+	</div>
+{% endblock %}
