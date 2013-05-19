@@ -32,6 +32,8 @@ class Interest(models.Model):
 
 class InteresToSkill(models.Model):
     class Meta:
+        verbose_name = 'Рейтинг навыка'
+        verbose_name_plural = 'Рейтинги навыков'
         unique_together = (('skill', 'interest'), )
 
     skill = models.ForeignKey(Skill, verbose_name='Навык')
@@ -59,11 +61,11 @@ class TimeTable(models.Model):
     finish_time = models.TimeField(verbose_name='Время окончания')
     workshop = models.ForeignKey('Workshop')
 
-    def __unicode__(self):
-        return "%s c %s по %s" % (
-            self.get_day_display(),
-            self.start_time,
-            self.finish_time)
+#    def __unicode__(self):
+#        return "%s c %s по %s" % (
+#            self.get_day_display(),
+#            self.start_time,
+#            self.finish_time)
 
 
 class Organization(models.Model):
