@@ -2,9 +2,9 @@
 
 {% block content %}
 <div id='filter'>
-<a href='/interest/'>Все</a>&nbsp;
+<a href='/interests/'>Все</a>&nbsp;
 {% for g in groups %}
-<a href='/interest/type/{{ g.id }}'>{{ g.name }}</a>&nbsp;
+<a href='/interests/type/{{ g.id }}'>{{ g.name }}</a>&nbsp;
 {% endfor %}
 
 </div>
