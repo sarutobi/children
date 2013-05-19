@@ -1,194 +1,5 @@
 {% extends 'index.html' %}
-	<style>
-		body {
-			margin: 0;
-			overflow: hidden;
-		}
-		h1 {
-			display: block;
-			font-size: 36pt;
-			text-align: center;
-			font-weight: bold;
-		}
-		#header {
-			width: 100%; height: 40px;
-			background: #1142AA;
-			line-height: 40px;
-			text-align: right;
-			color: white;
-		}
-		#header a {
-			text-decoration: none;
-			color: white;
-			font-size: 10pt;
-			padding: 0 10px;
-			border-left: 1px solid white;
-		}
-		#header a:first-child {
-			border: 0; padding-left: 15px;
-		}
-		#header a:hover {
-			text-decoration: underline;
-		}
-		#logo {
-			width: 200px; height: 40px; background: url('{{ STATIC_URL }}img/logo.png') center center;
-		}
-		#header .wrapper{
-			position: absolute; top:0; left: 200px;
-		}
-		#startForm {
-			height: 100%; width: 100%;
-			margin: auto;
-			padding: 10px;
-			font-family: Helvetica;
-		}
-		.container {
-			width: 960px;
-			margin: auto;
-		}
-		#mood {
-			margin: auto;
-		}
-		#mood .elem {
-			width: 25%;
-			display: inline-block;
-			overflow: hidden;
-			color: white; 
-			text-align: center;
-		}
-		.sprite {
-			width: 200px; height: 200px;
-			margin: auto;
-			overflow: hidden;
-			position: relative;
-		}
-		#mood .elem:hover {
-			color: black;
-		}
-		.sprite img {
-			position: absolute;
-			top: 0; left: 0;
-		}
-		.sprite img:hover {
-			top: -200px;
-		}
-		.sprite img.active {
-			top: -400px;
-		}
-		.notactive {
-			background-color: #000;
-			height: 100%; width: 100%;
-			left: 0;  top: 0;
-			opacity: 0.8; z-index: 100;
-			position: absolute;
-		}
-		#mood.slideshow {
-			width: 300px;
-			height: 300px;
-		}
-		#mood.slideshow .elem {
-			width: 100%;
-		}
-		#regForm {
-			width: 330px;
-			margin: auto;
-		}
-		#regForm input {
-			width: 300px; height: 40px; 
-			padding: 0 10px; margin: 15px;
-			display: block;
-		}
-		#regButtonGroup {
-			width: 300px; height: 80px;
-			padding: 28px; margin: auto;
-		}
-		#logButton, #regButton{
-			width: 130px; height: 24px;
-			margin: 10px;
-		}
-		#logFormWrapper input[type=submit] {
-			float: right;
-			width: 90px; height: 24px;
-			margin: 10px;
-		}
-		#nav {
-			width: 100%;
-		}
-		#nav .tab {
-			width: 33.3%; display: inline-block; 
-			position: relative;
-		}
-		#nav .sprite img.active {
-			top: -200px;
-		}
-		#panel {
-			width: 100%;
-		}
-		#panel img {
-			display: inline-block;
-			margin: 8px;
-			border: 3px solid white;
-		}
-		#panel img.active {
-			border: 3px solid yellow;
-		}
-		#cab div {
-			display: inline-block;
-		}
-		#cab h2 {
-			font-size: 15pt; font-weight: bold;
-			display: block;
-		}
-		#profile {
-			width: 100%;
-		}
-		#avatar {
-			background: url('{{ STATIC_URL }}img/user.png') center center;
-			width: 250px; height: 250px;
-		}
-		#progress {
-			padding: 20px;
-		}
-		#cab #progress .prog {
-			display: block;
-			height: 10px; width: 100px;
-			margin: 5px 0;
-			border: 1px solid grey;
-		}
-		.prog div {
-			height: 100%;
-		}
-		#concentrate {
-			border: 1px solid red;
-		}		
-		#stress {
-			border: 1px solid green;
-		}
-		#actor {
-			border: 1px solid yellow;
-		}
-		#social {
-			border: 1px solid blue;
-		}
-		#stamina {
-			border: 1px solid purple;
-		}
-		#concentrate div {
-			background-color: red;
-		}		
-		#stress div {
-			background-color: green;
-		}
-		#actor div {
-			background-color: yellow;
-		}
-		#social div {
-			background-color: blue;
-		}
-		#stamina {
-			background-color: purple;
-		}
-	</style>
+
 {% block content %}
 	<script type="text/javascript">
 		$(document).on('ready', function () {
@@ -200,7 +11,22 @@
 		<div id='profile'>
 			<div id='avatar'></div>
 			<div id='progress'>
-				<div class='prog' id='concentrate'><div class='percent' width='0px'></div></div><div class='prog' id='stress'><sdiv class='percent' width='16px'></div></div><div class='prog' id='actor'><div class='percent' width='20px'></div></div><div class='prog' id='social'><div class='percent' width='14px'></div></div><div class='prog' id='stamina'><div class='percent' width='33px'></div></div>
+				Навыки:<br>
+				<div class='prog' id='concentrate'>
+					<div class='percent'></div>
+				</div>
+				<div class='prog' id='stress'>
+					<div class='percent'>1111</div>
+				</div>
+				<div class='prog' id='actor'>
+					<div class='percent' width='20px'>111111111</div>
+				</div>
+				<div class='prog' id='social'>
+					<div class='percent' width='14px'>11111</div>
+				</div>
+				<div class='prog' id='stamina'>
+					<div class='percent' width='33px'>1111111</div>
+				</div>
 			</div>
 			<div id='skills'></div>
 		</div>
