@@ -3,6 +3,11 @@
 {% block content %}
 	<script type="text/javascript">
 		$(document).on('ready', function () {
+			$('#panel img').on('click', function () {
+				if ($(this).hasClass('active')) {
+					$(this).removeClass('active');
+				} else $(this).addClass('active');
+			});
 			doc_w = $(document).width();
 			if (doc_w < 500)  {
 				$('#mood').addClass('slideshow');
@@ -32,15 +37,8 @@
 						elem.stop();
 					}, 500);
 				}
-				$('#panel div').fadeOut(500, function () {
-					$('#panel').show();
-					$('#'+$(this).parent().parent().attr('id')+'Panel').fadeIn(500);
-				});
-				$('#panel img').on('click', function () {
-					if ($(this).hasClass('active')) {
-						$(this).removeClass('active');
-					} else $(this).addClass('active');
-				});
+				$('#panel div').hide();
+				$('#'+$(this).parent().parent().attr('id')+'Panel').show();
 			});
 		});
 	</script>
@@ -60,12 +58,12 @@
 			</div>
 			<div id='sciencePanel'>
 				<img src="{{ STATIC_URL }}img/astronomy.jpg">
-				<img src="{{ STATIC_URL }}img/chemistry.jpg">
+				<img src="{{ STATIC_URL }}img/chemisty.jpg">
 				<img src="{{ STATIC_URL }}img/math.jpg">
 				<img src="{{ STATIC_URL }}img/physics.jpg">
 			</div>
 			<div id='sportPanel'>
-				<img src="{{ STATIC_URL }}img/athletics.jpg">
+				<img src="{{ STATIC_URL }}img/athletic.jpg">
 				<img src="{{ STATIC_URL }}img/basketball.jpg">
 				<img src="{{ STATIC_URL }}img/box.jpg">
 				<img src="{{ STATIC_URL }}img/chess.jpg">
