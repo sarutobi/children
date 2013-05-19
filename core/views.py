@@ -31,3 +31,9 @@ def organization_list(request):
         { 'sections': Workshop.objects.all(), },
         context_instance=RequestContext(request)
     )
+
+def cabinet(request):
+    return render_to_response(
+        'cab.html',
+        context_instance=RequestContext(request)
+    )
