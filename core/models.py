@@ -59,9 +59,14 @@ class Organization(models.Model):
         verbose_name_plural = 'Организации'
 
     name = models.CharField(max_length=40, verbose_name='Наименование')
-    description = models.TextField(verbose_name='Описание')
+    description = models.TextField(
+        verbose_name='Описание',
+        blank=True, null=True)
     address = models.CharField(max_length=200, verbose_name='Адрес')
-    phone = models.CharField(max_length=100, verbose_name='Телефоны')
+    phone = models.CharField(
+        max_length=100,
+        verbose_name='Телефоны',
+        blank=True, null=True)
 
     def __unicode__(self):
         return self.name
@@ -76,8 +81,14 @@ class Workshop(models.Model):
     name = models.CharField(max_length=40, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
     sheduled = models.ManyToManyField(TimeTable)
-    address = models.CharField(max_length=200, verbose_name='Адрес')
-    phone = models.CharField(max_length=100, verbose_name='Телефоны')
+    address = models.CharField(
+        max_length=200,
+        verbose_name='Адрес',
+        blank=True, null=True)
+    phone = models.CharField(
+        max_length=100,
+        verbose_name='Телефоны',
+        blank=True, null=True)
 
     def __unicode__(self):
         return "%s: %s" % (self.organization.name, self.name)
