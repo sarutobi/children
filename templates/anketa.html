@@ -36,7 +36,7 @@
 						elem.stop();
 					}, 500);
 				}
-				$('#panel div').fadeOut(500, function () {
+				$('#panel div:not(#'+$(me).parent().parent().attr('id')+'Panel)').fadeOut(500, function () {
 					$('#'+$(me).parent().parent().attr('id')+'Panel').fadeIn(500);					
 				});
 
