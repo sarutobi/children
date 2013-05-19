@@ -141,7 +141,7 @@
 			width: 100%;
 		}
 		#avatar {
-			background: url('static/img/user.png') center center;
+			background: url('/static/img/user.png') center center;
 			width: 250px; height: 250px;
 			float: left;
 		}
