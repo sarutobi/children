@@ -26,6 +26,10 @@ class Challenge(models.Model):
     and allowed list ofparticipatns. The last one can be individual user
     or user group. For more deatils about participants see participants.
     '''
+    class Meta:
+        verbose_name = 'Задача'
+        verbose_name_plural = 'Задачи'
+
     # Challenge name
     title = models.CharField(max_length=100, verbose_name=_('title'))
     # Short description
@@ -108,6 +112,10 @@ class Activity(models.Model):
     Every complete activity item from this list will be rewarded when one of
     challenge moderators confirm user action.
     '''
+    class Meta:
+        verbose_name = 'Действие'
+        verbose_name_plural = 'Действия'
+
     # Activities cost type constants
     TASK_COMPLETION = 1
     TASK_HOURS = 2
