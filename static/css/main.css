@@ -29,7 +29,7 @@
 			text-decoration: underline;
 		}
 		#logo {
-			width: 200px; height: 40px; background: url('{{ STATIC_URL }}img/logo.png') center center;
+			width: 200px; height: 40px; background: url('/static/img/logo.png') center center;
 		}
 		#header .wrapper{
 			position: absolute; top:0; left: 200px;
@@ -141,7 +141,7 @@
 			width: 100%;
 		}
 		#avatar {
-			background: url('{{ STATIC_URL }}img/user.png') center center;
+			background: url('static/img/user.png') center center;
 			width: 250px; height: 250px;
 			float: left;
 		}
