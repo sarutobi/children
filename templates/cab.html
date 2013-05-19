@@ -12,11 +12,11 @@
 			<div id='avatar'></div>
 			<div id='progress'>
 				Навыки:<br>
-				{{ % for s in skills % }}
-				<div class='prog' id='{{ s.id }}'>
-					<div title='{{ s.name}}' class='percent'></div>
+				{% for s in skills %}
+				<div class='prog' id='skill_{{ s.id }}'>
+					<div title='{{ s.name }}' class='percent'></div>
 				</div>
-				{{ % endfor % }}
+				{% endfor %}
 <!-- 				<div class='prog' id='stress'>
 					<div class='percent'>1111</div>
 				</div>
