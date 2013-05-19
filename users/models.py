@@ -35,6 +35,9 @@ class Skill(models.Model):
     name = models.CharField(max_length=30, verbose_name='Навык')
     description = models.TextField(verbose_name='Описание')
 
+    def __unicode__(self):
+        return self.name
+
 
 class Scool(models.Model):
     name = models.CharField(max_length=40, verbose_name=_('Школа'))
