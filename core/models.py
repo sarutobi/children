@@ -106,6 +106,14 @@ class Workshop(models.Model):
         max_length=100,
         verbose_name='Телефоны',
         blank=True, null=True)
+    min_age = models.IntegerField(
+        verbose_name='Минимальный возраст',
+        blank=True, null=True
+    )
+    max_age = models.IntegerField(
+        verbose_name='Максимальный возраст',
+        blank=True, null=True
+    )
 
     def __unicode__(self):
         return "%s: %s" % (self.organization.name, self.name)
