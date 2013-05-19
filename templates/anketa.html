@@ -14,7 +14,7 @@
 				}); 
     		}
 			$('.notactive').hide();
-			$('#panel').hide();
+			$('#panel').hide(); $('#panel div').slideUp(0);
 			$('#nav .sprite img').on('click', function () {
 				var me = this;
 				if ($('#nav .sprite img.active').length) {
