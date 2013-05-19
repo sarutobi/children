@@ -31,9 +31,12 @@ class Interest(models.Model):
 
 
 class InteresToSkill(models.Model):
-    skill = models.ForeignKey(Skill, verbose_name='')
-    interest = models.ForeignKey(Interest, verbose_name='')
-    ratio = models.FloatField(verbose_name='')
+    class Meta:
+        unique_together = (('skill', 'interest'), )
+
+    skill = models.ForeignKey(Skill, verbose_name='Навык')
+    interest = models.ForeignKey(Interest, verbose_name='Занятие')
+    ratio = models.FloatField(verbose_name='Рейтинг')
 
 
 DAYS_OF_WEEK = (
