@@ -3,7 +3,8 @@
 from django.contrib import admin
 from .models import (
     GroupOfInterest, Interest,
-    Organization, Workshop, TimeTable)
+    Organization, Workshop, TimeTable,
+    InteresToSkill)
 
 
 class AdminGroupOfInterest(admin.ModelAdmin):
@@ -22,6 +23,12 @@ class AdminOrganization(admin.ModelAdmin):
     list_display = ('name', 'address', 'phone')
 
 admin.site.register(Organization, AdminOrganization)
+
+
+class AdminSkillRating(admin.ModelAdmin):
+    list_display = ('skill', 'interest', 'ratio')
+
+admin.site.register(InteresToSkill, AdminSkillRating)
 
 
 class TimeTableInline(admin.TabularInline):
