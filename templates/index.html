@@ -185,8 +185,8 @@
 		#actor div {color: yellow; background-color: yellow;}
 		#social div {color: blue; background-color: blue;}
 		#stamina div {color: purple; background-color: purple;}
-		table tr:nth-child(even) td:nth-child(odd) {background: #FF4040;}
-		table tr:nth-child(odd) td:nth-child(even) {background: #FFEC40;}
+		tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {background: #FF4040;}
+		tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {background: #FFEC40;}
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"  type="text/javascript"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
