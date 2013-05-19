@@ -2,6 +2,8 @@
 
 from django.db import models
 
+from users.models import Skill
+
 
 class GroupOfInterest(models.Model):
     class Meta:
@@ -26,6 +28,13 @@ class Interest(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class InteresToSkill(models.Model):
+    skill = models.ForeignKey(Skill, verbose_name='')
+    interest = models.ForeignKey(Interest, verbose_name='')
+    ratio = models.FloatField(verbose_name='')
+
 
 DAYS_OF_WEEK = (
     (1, 'Понедельник'),
