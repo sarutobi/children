@@ -60,6 +60,7 @@ class Organization(models.Model):
 
     name = models.CharField(max_length=40, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
+    address = models.CharField(max_length=200, verbose_name='Адрес')
     phone = models.CharField(max_length=100, verbose_name='Телефоны')
 
     def __unicode__(self):
@@ -75,6 +76,8 @@ class Workshop(models.Model):
     name = models.CharField(max_length=40, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
     sheduled = models.ManyToManyField(TimeTable)
+    address = models.CharField(max_length=200, verbose_name='Адрес')
+    phone = models.CharField(max_length=100, verbose_name='Телефоны')
 
     def __unicode__(self):
         return "%s: %s" % (self.organization.name, self.name)
