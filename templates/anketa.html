@@ -17,8 +17,10 @@
 			$('.sprite img').on('click', function () {
 				$('.sprite.active').removeClass('active');
 				$(this).addClass('active');
-				$('.sprite:not(.active) .notactive').fadeIn(200);
-				$('.sprite.active .notactive').hide();
+				$('.sprite img:not(.active)').fadeOut(1000);
+				setTimeout(function () {
+					$('.sprite img:not(.active)').stop();
+				}, 500);
 				//$('#myMood').val($('#mood img').index($(this)));
 			});
 		});
@@ -26,6 +28,10 @@
 	<div id='anketaPage' class='container'>
 		<div id='nav'>
 			<div id='art' class='tab'><div class='sprite'><div class='notactive'></div><img src='{{ STATIC_URL }}img/art.png'></div></div><div id='science' class='tab'><div class='sprite'><div class='notactive'></div><img src='{{ STATIC_URL }}img/science.png'></div></div><div id='sport' class='tab'><div class='sprite'><div class='notactive'></div><img src='{{ STATIC_URL }}img/sport.png'></div></div>
+		</div>
+		<div id='panel'>
+			<div id='artPanel'>
+				<img src="3dprinting">
 		</div>
 	</div>
 {% endblock %}
