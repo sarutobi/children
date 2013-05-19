@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from .models import Workshop, Interest, GroupOfInterest
-
+from users.models import Skill
 
 def index(request):
     return render_to_response(
@@ -32,8 +32,10 @@ def organization_list(request):
         context_instance=RequestContext(request)
     )
 
+
 def cabinet(request):
     return render_to_response(
         'cab.html',
+        {'skills': Skill.objects.all(), },
         context_instance=RequestContext(request)
     )
