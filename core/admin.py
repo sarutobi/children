@@ -24,7 +24,7 @@ class AdminOrganization(admin.ModelAdmin):
 admin.site.register(Organization, AdminOrganization)
 
 
-class TimeTableInline(admin.StackedInline):
+class TimeTableInline(admin.TabularInline):
     model = TimeTable
 
 
