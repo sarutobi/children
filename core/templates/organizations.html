@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<table>
+<tr>
+<td>Организация</td>
+<td>Адрес</td>
+<td>Секция</td>
+<td>Тренер</td>
+</tr>
+{% for s in sections %}
+<tr>
+<td>{{ s.organization.name }}</td>
+<td>{{ s.address|default:s.organization.address }} {{s.phone|default:s.organization.phone }}</td>
+<td>{{ s.name }} {{ s.description }}</td>
+<td>{{ s.instructor }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

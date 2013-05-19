@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
     url(r'^$', 'core.views.index'),
     url(r'^registration$', 'users.views.registration'),
+    url(r'^organizations$', 'core.views.organization_list'),
     url(r'^anketa$', 'users.views.anketa'),
     url(r'^interests', 'core.views.interests'),
     url(r'^interests/type/(?P<type>\d+$)', 'core.views.interests'),

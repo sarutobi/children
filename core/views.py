@@ -3,7 +3,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from .models import Interest, GroupOfInterest
+from .models import Workshop, Interest, GroupOfInterest
 
 
 def index(request):
@@ -21,5 +21,13 @@ def interests(request, type=None):
         { 'groups': groups,
           'interests': interests,
         },
+        context_instance=RequestContext(request)
+    )
+
+
+def organization_list(request):
+    return render_to_response(
+        'organizations.html',
+        { 'sections': Workshop.objects.all(), },
         context_instance=RequestContext(request)
     )
