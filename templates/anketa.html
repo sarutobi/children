@@ -18,8 +18,7 @@
 	    			easing:  'easeInOutBack'
 				}); 
     		}
-			$('.notactive').hide();
-			$('#panel div').hide();
+			$('#panel div').fadeOut(0);
 			$('#nav .sprite img').on('click', function () {
 				var me = this;
 				$(me).css({opacity: 1});
@@ -37,8 +36,10 @@
 						elem.stop();
 					}, 500);
 				}
-				$('#panel div').hide();
-				$('#'+$(this).parent().parent().attr('id')+'Panel').show();
+				$('#panel div').fadeOut(500, function () {
+					$('#'+$(me).parent().parent().attr('id')+'Panel').fadeIn(500);					
+				});
+
 			});
 		});
 	</script>
