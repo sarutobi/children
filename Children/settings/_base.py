@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'core',
+    'challenge',
 )
 
 AUTHENTICATION_BACKENDS = (
