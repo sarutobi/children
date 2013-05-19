@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div>
+{% for s in skills %}
+<a href='/skill/{{ s.id }}'>{{ s.name }}</a>
+{% for n in s.interestoskill_set.all %}{{ n.interest.name }}{% endfor %}
+{% endfor %}
+</div>
+{% endblock %}
