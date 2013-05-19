@@ -6,10 +6,10 @@ from django.utils.translation import ugettext_lazy as _
 
 class UserType(models.Model):
     class Meta:
-        order = ('order')
+        ordering = ('order',)
 
-    name = models.CharField(imax_length=20, verbose_name=_('Наименование'))
-    description = models.Text(
+    name = models.CharField(max_length=20, verbose_name=_('Наименование'))
+    description = models.TextField(
         verbose_name=_('Описание'),
         blank=True,
         null=True)
@@ -24,7 +24,16 @@ SEX = (
 
 class UserProfile(models.Model):
     age = models.IntegerField(_('Возраст'))
-    sex = models.IntegerField(choice=SEX, verbose_name=_('Пол'))
+    sex = models.IntegerField(choices=SEX, verbose_name=_('Пол'))
+
+
+class Skill(models.Model):
+    class Meta:
+        verbose_name = 'Навык'
+        verbose_name_plural = 'Навыки'
+
+    name = models.CharField(max_length=30, verbose_name='Навык')
+    description = models.TextField(verbose_name='Описание')
 
 
 class Scool(models.Model):

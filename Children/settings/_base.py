@@ -142,6 +142,7 @@ INSTALLED_APPS = (
     'south',
     'core',
     'challenge',
+    'users',
 )
 
 AUTHENTICATION_BACKENDS = (
