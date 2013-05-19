@@ -22,3 +22,9 @@ class AdminOrganization(admin.ModelAdmin):
     list_display = ('name', 'address', 'phone')
 
 admin.site.register(Organization, AdminOrganization)
+
+
+class AdminWorkshop(admin.ModelAdmin):
+    list_display = ('organization', 'name')
+
+admin.site.register(Workshop, AdminWorkshop)
