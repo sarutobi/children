@@ -15,10 +15,10 @@
     		}
 			$('.notactive').hide();
 			$('.sprite img').on('click', function () {
-				$('.sprite .active').removeClass('active');
+				$('.sprite.active').removeClass('active');
 				$(this).addClass('active');
 				$('.sprite:not(.active) .notactive').fadeIn(200);
-				$('.sprite .active .notactive').hide();
+				$('.sprite.active .notactive').hide();
 				//$('#myMood').val($('#mood img').index($(this)));
 			});
 		});
