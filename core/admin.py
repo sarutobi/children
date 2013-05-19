@@ -3,7 +3,7 @@
 from django.contrib import admin
 from .models import (
     GroupOfInterest, Interest,
-    Organization, Workshop)
+    Organization, Workshop, TimeTable)
 
 
 class AdminGroupOfInterest(admin.ModelAdmin):
@@ -24,7 +24,12 @@ class AdminOrganization(admin.ModelAdmin):
 admin.site.register(Organization, AdminOrganization)
 
 
+class TimeTableInline(admin.StackedInline):
+    model = TimeTable
+
+
 class AdminWorkshop(admin.ModelAdmin):
-    list_display = ('organization', 'name')
+    list_display = ('name', 'organization')
+    inlines = [TimeTableInline, ]
 
 admin.site.register(Workshop, AdminWorkshop)

@@ -45,6 +45,7 @@ class TimeTable(models.Model):
     day = models.IntegerField(choices=DAYS_OF_WEEK, verbose_name='День недели')
     start_time = models.TimeField(verbose_name='Время начала')
     finish_time = models.TimeField(verbose_name='Время окончания')
+    workshop = models.ForeignKey('Workshop')
 
     def __unicode__(self):
         return "%s c %s по %s" % (
@@ -81,7 +82,7 @@ class Workshop(models.Model):
     name = models.CharField(max_length=40, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
     instructor = models.CharField(max_length=60, verbose_name='Тренер')
-    sheduled = models.ManyToManyField(TimeTable, blank=True, null=True)
+    #sheduled = models.ManyToManyField(TimeTable, blank=True, null=True)
     interests = models.ManyToManyField(Interest, verbose_name='Занятия')
     address = models.CharField(
         max_length=200,
