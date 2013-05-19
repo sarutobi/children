@@ -16,14 +16,24 @@
 			$('.notactive').hide();
 			$('#panel').hide();
 			$('#nav .sprite img').on('click', function () {
+				$(this).show();
+				var curActive = $()
+				if ($('#nav .sprite img.active').length) {
+					$('#nav .sprite img.active').fadeOut(1000).removeClass('active');
+					setTimeout(function () {
+						$('#nav .sprite img.active').stop();
+						$(this).addClass('active'); 
+					}, 500);
+				} else {
+					$(this).addClass('active'); 
+					$('#nav .sprite img:not(.active)').fadeOut(1000);
+					setTimeout(function () {
+						$('#nav .sprite img:not(.active)').stop();
+					}, 500);
+				}
 				$('#nav .sprite img.active').removeClass('active');
-				$(this).addClass('active');
+				$(this).addClass('active'); 
 				$('#nav .sprite img:not(.active)').fadeOut(1000);
-				setTimeout(function () {
-					$('.sprite img:not(.active)').stop();
-				}, 500);
-				$('#nav .sprite img').fadeIn(500);
-				//$('#myMood').val($('#mood img').index($(this)));
 			});
 		});
 	</script>
@@ -46,7 +56,6 @@
 				<img src="{{ STATIC_URL }}img/chemistry.jpg">
 				<img src="{{ STATIC_URL }}img/math.jpg">
 				<img src="{{ STATIC_URL }}img/physics.jpg">
-
 			</div>
 		</div>
 	</div>
