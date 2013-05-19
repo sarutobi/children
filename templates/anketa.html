@@ -16,13 +16,12 @@
 			$('.notactive').hide();
 			$('#panel').hide();
 			$('#nav .sprite img').on('click', function () {
-				$(this).show();
-				var curActive = $()
 				if ($('#nav .sprite img.active').length) {
+					var me = this;
 					$('#nav .sprite img.active').fadeOut(1000).removeClass('active');
 					setTimeout(function () {
 						$('#nav .sprite img.active').stop();
-						$(this).addClass('active'); 
+						$(me).addClass('active'); 
 					}, 500);
 				} else {
 					$(this).addClass('active'); 
@@ -31,9 +30,6 @@
 						$('#nav .sprite img:not(.active)').stop();
 					}, 500);
 				}
-				$('#nav .sprite img.active').removeClass('active');
-				$(this).addClass('active'); 
-				$('#nav .sprite img:not(.active)').fadeOut(1000);
 			});
 		});
 	</script>
