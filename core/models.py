@@ -80,7 +80,9 @@ class Workshop(models.Model):
     organization = models.ForeignKey(Organization)
     name = models.CharField(max_length=40, verbose_name='Наименование')
     description = models.TextField(verbose_name='Описание')
-    sheduled = models.ManyToManyField(TimeTable)
+    instructor = models.CharField(max_length=60, verbose_name='Тренер')
+    sheduled = models.ManyToManyField(TimeTable, blank=True, null=True)
+    interests = models.ManyToManyField(Interest, verbose_name='Занятия')
     address = models.CharField(
         max_length=200,
         verbose_name='Адрес',
